@@ -7,3 +7,56 @@ body {
       #dddbd1 15vh,
       #d2dbdc 100%);
 }
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.wrapper {
+  height: 95%;
+  width: 80%;
+}
+
+main > .sidebar {
+  height: 100%;
+  width: 30%;
+}
+
+    .header {
+      background-color: #eaeaea;
+      height: 10%;
+    }
+
+    .sidebar > .callToAction {
+      background-color: #8edafc;
+      height: 10%;
+    }
+
+    .sidebar > .searchBox {
+      background-color: #fafafa;
+      height: 5%;
+    }
+
+    .sidebar > .chatList {
+      background-color: #fff;
+      height: 75%;
+    }
+
+main > .chatBox {
+  height: 100%;
+  width: 70%;
+}
+
+    /* .header (height: 10%;) already defined above */
+
+    .chatBox > .chat {
+      background-image: url("../img/chat-background.jpg");
+      height: 80%;
+    }
+
+    .chatBox > .chatInput {
+      background-color: #f3eeea;
+      height: 10%;
+    }
