@@ -19,33 +19,83 @@
   </head>
   <body class="flexContainer">
 
-    <main class="wrapper flexContainer">
+    <main id="root" class="wrapper flexContainer">
 
       <div class="sidebar">
         <div class="header flexContainer">
-
+          <div class="user flexContainer">
+            <div class="avatar">
+              <img :src="user.avatar" alt="">
+            </div>
+            <div class="name">
+              <span>{{user.name}}</span>
+            </div>
+          </div>
+          <div class="headerButtons flexContainer">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
         </div>
-        <div class="callToAction">
-
+        <div class="callToAction flexContainer">
+          <div class="notificationIcon flexContainer">
+            <i class="fas fa-bell-slash"></i>
+          </div>
+          <div class="notificationText">
+            <h5>Ricevi notifiche di nuovi messaggi</h5>
+            <h6>Attiva notifiche desktop</h6>
+          </div>
         </div>
-        <div class="searchBox">
-
+        <div class="searchBox flexContainer">
+          <div class="searchInput flexContainer">
+            <i class="fas fa-search"></i>
+            <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          </div>
         </div>
         <div class="chatList">
-
+          <ul class="flexContainer">
+            <li class="flexContainer" v-for="contact in contacts">
+              <div class="avatar">
+                <img :src="contact.avatar" alt="">
+              </div>
+              <div class="name">
+                <span>{{contact.name}}</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-      
+
       <div class="chatBox">
         <div class="header flexContainer">
 
+          <div class="chatContact flexContainer">
+            <div class="avatar">
+              <img :src="activeContact.avatar" alt="">
+            </div>
+            <div class="name">
+              <span>{{activeContact.name}}</span>
+            </div>
+          </div>
+
+          <div class="headerButtons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
         </div>
+
         <div class="chat">
 
         </div>
-        <div class="chatInput">
 
+        <div class="chatControl flexContainer">
+          <i class="far fa-smile"></i>
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <i class="fas fa-microphone"></i>
         </div>
+
       </div>
 
     </main>

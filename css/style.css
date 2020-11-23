@@ -6,6 +6,7 @@ body {
       #009688 15vh,
       #dddbd1 15vh,
       #d2dbdc 100%);
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .flexContainer {
@@ -22,27 +23,129 @@ main.wrapper {
 main > .sidebar {
   height: 100%;
   width: 30%;
+  border-right: 1px solid #d6d6d6;
 }
 
     .header {
       background-color: #eaeaea;
       height: 10%;
+      padding: 0 20px;
+      justify-content: space-between;
     }
+
+        .avatar > img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+        }
+
+        .name {
+          padding-left: 10px;
+          font-size: 0.8rem;
+        }
+
+        .name > span {
+          margin: 5px;
+        }
+
+        .headerButtons {
+          color: #b1b1b1;
+        }
+
+        .headerButtons > i:not(:last-child) {
+          margin-right: 10px;
+        }
 
     .sidebar > .callToAction {
       background-color: #8edafc;
       height: 10%;
+      justify-content: flex-start;
+      padding: 0 20px;
     }
+
+        .notificationIcon {
+          background-color: #fff;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .notificationIcon > i {
+          color: #8edafc;
+        }
+
+        .notificationText {
+          padding-left: 10px;
+        }
+
+        .notificationText h5 {
+          margin: 5px;
+          font-weight: 500;
+        }
+
+        .notificationText h6 {
+          margin: 5px;
+          color: #4f7485;
+          font-weight: 500;
+          text-decoration: underline;
+        }
 
     .sidebar > .searchBox {
       background-color: #fafafa;
       height: 5%;
     }
 
+        .searchBox > .searchInput {
+          background-color: #fff;
+          height: 80%;
+          width: 95%;
+          border: 1px solid #f5f5f5;
+          justify-content: space-around;
+        }
+
+        .searchBox > .searchInput > i {
+          color: #babfc1;
+          font-size: 0.8rem;
+        }
+
+        .searchBox > .searchInput > input {
+          width: 75%;
+          border: none;
+          border-radius: 5px;
+        }
+
+        input::placeholder {
+          color: #babfc1;
+        }
+
     .sidebar > .chatList {
       background-color: #fff;
       height: 75%;
+      overflow-y: auto;
     }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          flex-direction: column;
+        }
+
+        ul > li {
+          list-style-type: none;
+          padding: 20px;
+          border-bottom: 1px solid #f5f5f5;
+          align-self: flex-start;
+        }
+
+        ul > li > .avatar > img {
+          height: 50px;
+          width: 50px;
+        }
+
+        ul > li > .name {
+          font-size: 1rem;
+          align-self: flex-start;
+        }
 
 main > .chatBox {
   height: 100%;
@@ -56,7 +159,21 @@ main > .chatBox {
       height: 80%;
     }
 
-    .chatBox > .chatInput {
+    .chatBox > .chatControl {
       background-color: #f3eeea;
       height: 10%;
+      justify-content: space-around;
     }
+
+        .chatControl > input {
+          height: 60%;
+          width: 75%;
+          border: none;
+          border-radius: 5px;
+          padding: 0 20px;
+        }
+
+        .chatControl > i {
+          color: #6b7376;
+          font-size: 1.4rem;
+        }
