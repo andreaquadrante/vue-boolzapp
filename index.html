@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Boolzapp</title>
+    <title>BoolzApp</title>
 
-    <!-- FontAwesome -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/969320eebd.js" crossorigin="anonymous"></script>
 
-    <!-- CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- VueJS -->
@@ -28,7 +32,7 @@
               <img :src="user.avatar" alt="">
             </div>
             <div class="name">
-              <span>{{user.name}}</span>
+              <h4>{{user.name}}</h4>
             </div>
           </div>
           <div class="headerButtons flexContainer">
@@ -53,16 +57,20 @@
           </div>
         </div>
         <div class="chatList">
-          <ul class="flexContainer">
-            <li class="flexContainer" v-for="contact in contacts">
-              <div class="avatar">
-                <img :src="contact.avatar" alt="">
-              </div>
-              <div class="name">
-                <span>{{contact.name}}</span>
-              </div>
-            </li>
-          </ul>
+          <ul>
+            <template v-for="(contact, index) in contacts" v-model="activeChatIndex">
+              <li :class="{activeChat: (contact.id == activeChatIndex)}" @click="selectChat(contact.id)">
+                <div class="contact flexContainer">
+                  <div class="avatar flexContainer">
+                    <img :src="contact.avatar" alt="">
+                  </div>
+                  <div class="name flexContainer">
+                    <h4>{{contact.name}}</h4>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            </template>
         </div>
       </div>
 
@@ -71,10 +79,11 @@
 
           <div class="chatContact flexContainer">
             <div class="avatar">
-              <img :src="activeContact.avatar" alt="">
+              <img :src="contacts[activeChatIndex].avatar" alt="">
             </div>
             <div class="name">
-              <span>{{activeContact.name}}</span>
+              <h4>{{contacts[activeChatIndex].name}}</h4>
+              <h5>Ultimo accesso {{contacts[activeChatIndex].lastSeen}}</h5>
             </div>
           </div>
 

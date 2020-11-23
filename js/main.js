@@ -4,58 +4,70 @@ const app = new Vue ({
 
   data: {
 
-    // app user
     user: {
       avatar: 'img/avatar_io.jpg',
       name: 'Andrea Quadrante',
     },
 
-    // list (array) of contacts (objects)
     contacts: [
       {
+        id: 0,
         avatar: 'img/avatar_1.jpg',
-        name: 'Christian'
+        name: 'Christian',
+        lastSeen: ''
       },
       {
+        id: 1,
         avatar: 'img/avatar_2.jpg',
-        name: 'Eleonora'
+        name: 'Eleonora',
+        lastSeen: ''
       },
       {
+        id: 2,
         avatar: 'img/avatar_3.jpg',
-        name: 'Davide'
+        name: 'Davide',
+        lastSeen: ''
       },
       {
+        id: 3,
         avatar: 'img/avatar_4.jpg',
-        name: 'Gabriele'
+        name: 'Gabriele',
+        lastSeen: ''
       },
       {
+        id: 4,
         avatar: 'img/avatar_5.jpg',
-        name: 'Salvo'
+        name: 'Salvo',
+        lastSeen: ''
       },
       {
+        id: 5,
         avatar: 'img/avatar_6.jpg',
-        name: 'Sara'
+        name: 'Sara',
+        lastSeen: ''
       },
       {
+        id: 6,
         avatar: 'img/avatar_7.jpg',
-        name: 'Claudio'
+        name: 'Claudio',
+        lastSeen: ''
       },
       {
+        id: 7,
         avatar: 'img/avatar_8.jpg',
-        name: 'Emanuele'
+        name: 'Emanuele',
+        lastSeen: ''
       },
     ],
 
-    // contact displayed in chat header
-    activeContact: {
-      // has to be selected by user
-    },
+    activeChatIndex: 0,
 
   },
 
-  mounted() {
-    // when app runs, the displayed contact will be the first one of the list
-    this.activeContact = this.contacts[0];
-  }
+  methods: {
+    selectChat: function (index) {
+      this.activeChatIndex = index
+    },
+  },
 
 })
