@@ -96,7 +96,13 @@
         </div>
 
         <div class="chat">
-
+          <template v-for="message in contacts[activeChatIndex].chat">
+            <div class="messageRow">
+              <div class="text flexContainer" :class="message.status">
+                <p>{{message.text}}</p>
+              </div>
+            </div>
+          </template>
         </div>
 
         <div class="chatControl flexContainer">
