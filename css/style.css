@@ -43,7 +43,7 @@ main > .sidebar {
 
         .name {
           padding-left: 10px;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
         }
 
         .name > span {
@@ -203,16 +203,32 @@ main > .chatBox {
           margin: 0 30px;
         }
 
-        .text > p {
+        .text > .textBox {
+          margin: 5px 0;
           max-width: 300px;
           border-radius: 10px;
+          flex-direction: column;
+        }
+
+        .text > .textBox > p {
+          margin: 0;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+
+        .text > .textBox > span {
+          color: #b1b1b1;
+          font-size: 0.6rem;
+          font-weight: 400;
+          display: flex;
+          align-self: flex-end;
         }
 
         .sent {
           justify-content: flex-end;
         }
 
-        .sent > p {
+        .sent > .textBox {
           background-color: #d5f9ba;
           padding: 10px;
         }
@@ -221,7 +237,7 @@ main > .chatBox {
           justify-content: flex-start;
         }
 
-        .received > p {
+        .received > .textBox {
           background-color: #fff;
           padding: 10px;
         }

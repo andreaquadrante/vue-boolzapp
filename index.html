@@ -59,7 +59,7 @@
         <div class="chatList">
           <ul>
             <template v-for="(contact, index) in contacts" v-model="activeChatIndex">
-              <li :class="{activeChat: (contact.id == activeChatIndex)}" @click="selectChat(contact.id)">
+              <li :class="{activeChat: (index == activeChatIndex)}" @click="selectChat(index)">
                 <div class="contact flexContainer">
                   <div class="avatar flexContainer">
                     <img :src="contact.avatar" alt="">
@@ -99,7 +99,10 @@
           <template v-for="message in contacts[activeChatIndex].chat">
             <div class="messageRow">
               <div class="text flexContainer" :class="message.status">
-                <p>{{message.text}}</p>
+                <div class="textBox flexContainer">
+                  <p>{{message.text}}</p>
+                  <span>{{message.time}}</span>
+                </div>
               </div>
             </div>
           </template>
@@ -107,7 +110,7 @@
 
         <div class="chatControl flexContainer">
           <i class="far fa-smile"></i>
-          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <input type="text" name="" value="text" v-model="inputText" placeholder="Scrivi un messaggio" @keyup.enter="submitMessage">
           <i class="fas fa-microphone"></i>
         </div>
 
