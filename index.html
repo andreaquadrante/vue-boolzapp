@@ -66,6 +66,7 @@
                   </div>
                   <div class="name flexContainer">
                     <h4>{{contact.name}}</h4>
+                    <h6>{{activeChat.chat.text}}</h6>
                   </div>
                 </div>
               </li>
@@ -80,6 +81,7 @@
                   </div>
                   <div class="name flexContainer">
                     <h4>{{contact.name}}</h4>
+                    <h6>{{contact.chat[contact.chat.length - 1].text}}</h6>
                   </div>
                 </div>
               </li>
@@ -124,7 +126,7 @@
 
         <div class="chatControl flexContainer">
           <a href="#"><i class="far fa-smile"></i></a>
-          <input type="text" name="" value="" v-model="inputText" placeholder="Scrivi un messaggio" @keyup.enter="submitMessage">
+          <textarea id="textarea" type="text" name="" value="" v-model="inputText" placeholder="Scrivi un messaggio" @keyup.enter="submitMessage"></textarea>
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
 
