@@ -56,7 +56,11 @@ main > .sidebar {
           flex-shrink: 0;
         }
 
-        .headerButtons > i:not(:last-child) {
+        .headerButtons a > i {
+          color: #b1b1b1;
+        }
+
+        .headerButtons a:not(:last-child) {
           margin-right: 10px;
         }
 
@@ -76,7 +80,7 @@ main > .sidebar {
           flex-shrink: 0;
         }
 
-        .notificationIcon > i {
+        .notificationIcon i {
           color: #8edafc;
         }
 
@@ -145,7 +149,6 @@ main > .sidebar {
         }
 
         li:hover {
-          background-color: #f1f2f2;
           cursor: pointer;
         }
 
@@ -256,7 +259,7 @@ main > .chatBox {
           padding: 0 20px;
         }
 
-        .chatControl > i {
+        .chatControl i {
           color: #6b7376;
           font-size: 1.4rem;
         }

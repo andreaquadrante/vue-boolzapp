@@ -58,6 +58,7 @@ const app = new Vue ({
           },
           {
             text: "Andrà tutto bene. Chiamami quando ti va",
+            time: currentTime,
             status: 'sent'
           },
         ]
@@ -225,26 +226,33 @@ const app = new Vue ({
       },
     ],
 
-    activeChatIndex: 0,
+    // activeChatIndex: 0,
+    activeChat: null,
     inputText: "",
+    inputSearch: "",
+    filteredContacts: [],
 
   },
 
+  created() {
+		this.activeChat = this.contacts[0]
+	},
+
   methods: {
-    selectChat: function (index) {
-      this.activeChatIndex = index
+    selectChat: function (contact) {
+      this.activeChat = contact
     },
     randomAnswer: function () {
       const randomText = ["Scusami, adesso non posso parlare. A dopo", "Va bene Andre", "Ti scrivo dopo, scusa", "È un piacere sentirti!", "Okay", "Ciao Andre!"];
       const randomTextIndex = Math.floor (Math.random () * 6);
-      this.contacts[this.activeChatIndex].chat.push ({
+      this.activeChat.chat.push ({
         text: randomText[randomTextIndex],
-        status: "received",
         time: currentTime,
+        status: "received",
       })
     },
     submitMessage: function () {
-      this.contacts[this.activeChatIndex].chat.push ({
+      this.activeChat.chat.push ({
         text: this.inputText,
         time: currentTime,
         status: 'sent',
@@ -252,6 +260,9 @@ const app = new Vue ({
         setTimeout (this.randomAnswer, 3000);
         this.inputText = ""
     },
+    contactsFilter: function () {
+			this.filteredContacts = this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch))
+		}
   },
 
 })
